@@ -1,0 +1,8 @@
+%div.row
+  %h1.header Setup Your Teetime!
+  %hr
+%div.row
+  = simple_form_for @teetime do |f|
+    = f.input :date, as: :datetime
+    = f.input :course
+    = f.submit "Make Teetime!", class: 'button large maketeetime' 

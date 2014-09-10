@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation 
+ *= require foundation_and_overrides
+ /*= require foundation */
+
+ */
+
+.header{
+  text-align: center; 
+}
+
+form#new_teetime{
+  margin-left: 5em;
+  margin-top: 5em;
+}
+
+input.maketeetime{
+  margin-left: 40%
+}
+
+input#teetime_course{
+  width:30%
+}
+
+select#teetime_date_1i, select#teetime_date_2i, select#teetime_date_3i, select#teetime_date_4i, select#teetime_date_5i {
+  width:20%
+}
+
+select#teetime_date_2i{
+  display: none;
+}
+
+ #signup{
+  text-align: center;
+ }
