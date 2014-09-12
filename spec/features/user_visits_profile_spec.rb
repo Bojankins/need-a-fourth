@@ -14,7 +14,6 @@ feature "User visits profile page." do
     current_path.should == new_teetime_path
     fill_in "Date", with: "2014-09-09 15:37:31"
     fill_in "Course", with: "Paul Walker"
-    fill_in "Golfer 1", with: "#{@user.name}"
     page.should have_content("You Created a Teetime Paul Walker")
   end
 end

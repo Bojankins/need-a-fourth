@@ -12,20 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
 //= require foundation
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-
-
-(function(){
-  'use strict';
-
-  $(document).ready(init);
-
-  function init(){
-      $("a").click(function(){
-    $(this).hide();
-  });
-})();

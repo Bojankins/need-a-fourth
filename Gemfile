@@ -5,10 +5,14 @@ source 'https://rubygems.org'
 #ruby-gemset=needafourth
 
 gem 'rails_layout'
+gem 'simple-form-datepicker'
 gem 'simplecov'
 gem 'devise'
 gem 'omniauth'
+gem 'jquery-ui-rails'
 gem 'omniauth-linkedin'
+gem 'sass'
+gem 'momentjs-rails'
 gem 'haml'
 gem 'foundation-rails'
 gem 'rspec-rails'
@@ -30,6 +34,10 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'fabrication'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :test do

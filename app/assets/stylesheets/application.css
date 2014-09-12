@@ -13,13 +13,16 @@
  *= require_tree .
  *= require_self
  *= require foundation 
- *= require foundation_and_overrides
  /*= require foundation */
 
  */
 
 .header{
   text-align: center; 
+}
+
+table#teetimes{
+  width:20em
 }
 
 form#new_teetime{
@@ -36,12 +39,9 @@ input#teetime_course{
 }
 
 select#teetime_date_1i, select#teetime_date_2i, select#teetime_date_3i, select#teetime_date_4i, select#teetime_date_5i {
-  width:20%
+  width:15%
 }
 
-select#teetime_date_2i{
-  display: none;
-}
 
  #signup{
   text-align: center;

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users#, :controllers => { :registrations => "users/registrations" }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -7,10 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
-  get '/auth/linkedin/callback', to: 'sessions#create'
+  devise_for :users
 
-  resources :teetimes, only: [:new, :index]
-
+  resources :teetimes, only: [:new, :index, :create, :all]
+  
+  
+  get '/teetimes/all', to: 'teetimes#all'
+  get '/teetimes/user/:user_id', to: 'teetimes#user_data', as: :usersteetime
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
