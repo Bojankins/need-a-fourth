@@ -16,9 +16,9 @@
     \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
 
   - if user_signed_in? && !current_user.teetimes.nil?
-    =link_to "View Your Profile", usersteetime_path(@user), :class => 'button large'
+    =link_to "Add Your First Teetime", new_teetime_path, :class => 'button large' 
     =link_to "View All Available Teetimes", '/teetimes/all', :class => 'button large'
-  - else
+  - else 
     %br
-    =link_to "Add Your First Teetime", new_teetime_path, :class => 'button large'  
+    =link_to "View Your Profile", usersteetime_path(@user), :class => 'button large' 
     =link_to "View All Available Teetimes", teetimes_all_path, :class => 'button large'

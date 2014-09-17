@@ -1,5 +1,4 @@
 
-require 'pry'
 class TeetimesController < ApplicationController
   before_action :authenticate_user!
   
@@ -9,18 +8,13 @@ class TeetimesController < ApplicationController
     @teetime = Teetime.where(user_id: current_user)
   end
 
-  def new
-    @teetime = Teetime.new
-    @users = User.all
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-      marker.lat user.latitude
-      marker.lng user.longitude
-    end
-  end
-
   def all
     @teetime = Teetime.all
     @user = User.all
+  end
+
+  def new
+    @teetime = Teetime.new
   end
 
   def user_data
@@ -31,7 +25,7 @@ class TeetimesController < ApplicationController
     @teetime = Teetime.new(teetime_params)
     if @teetime.save
       # UserMailer.registration_confirmation.deliver
-      redirect_to teetimes_path(current_user)
+      redirect_to teetimes_path(@user)
     else
       flash.now[:alert] = "Teetime could not be created."
       render :new
@@ -40,12 +34,15 @@ class TeetimesController < ApplicationController
 
   def edit
     @teetime = Teetime.find(params[:id])
+    @user = User.find_by_id(@teetime.user_id)
   end
 
   def update
     @teetime = Teetime.find(params[:id])
-
+    @user = User.find_by_id(@teetime.user_id)
+    @player = current_user
     if @teetime.update(teetime_params)
+      UserMailer.player_confirmation(@user, @player).deliver
       redirect_to teetimes_all_path
     else
       render :edit
