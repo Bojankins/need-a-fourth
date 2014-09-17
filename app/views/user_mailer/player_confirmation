@@ -1,0 +1,4 @@
+<%= @user.name %>,
+<br></br>
+<span><%= link_to @player.name, usersteetime_path(@player, :host => "localhost:3000", :only_path =>
+false) %>,</span>  has requested to join your Teetime. Please Except Or Decline the request.
