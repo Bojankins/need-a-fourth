@@ -62,6 +62,8 @@ GEM
     foundation-rails (5.4.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    geocoder (1.2.5)
+    gmaps4rails (2.1.2)
     haml (4.0.5)
       tilt
     hashie (3.3.1)
@@ -76,6 +78,8 @@ GEM
     jquery-ui-rails (5.0.0)
       railties (>= 3.2.16)
     json (1.8.1)
+    lodash-rails (2.4.1)
+      railties (>= 3.1)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -218,10 +222,13 @@ DEPENDENCIES
   devise
   fabrication
   foundation-rails
+  geocoder
+  gmaps4rails
   haml
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
+  lodash-rails
   momentjs-rails
   omniauth
   omniauth-linkedin

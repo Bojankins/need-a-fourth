@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
+  resource :user
 
-  resources :teetimes, only: [:new, :index, :create, :all]
-  
+  resources :teetimes, only: [:new, :index, :create, :all, :destroy, :edit, :update]
   
   get '/teetimes/all', to: 'teetimes#all'
   get '/teetimes/user/:user_id', to: 'teetimes#user_data', as: :usersteetime

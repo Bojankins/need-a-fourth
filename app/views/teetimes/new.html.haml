@@ -6,5 +6,10 @@
     = f.input :date, as: :datetime, :ampm => true
     = f.input :course
     = f.hidden_field :player1, :value => current_user.name
+    = f.hidden_field :player2, :value => "OPEN"
+    = f.hidden_field :player3, :value => "OPEN"
+    = f.hidden_field :player4, :value => "OPEN"
     = f.hidden_field :user_id, :value => current_user.id
-    = f.submit "Make Teetime!", class: 'button large maketeetime' 
+    = f.submit "Make Teetime!", class: 'button large maketeetime'
+
+%div#map

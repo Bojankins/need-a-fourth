@@ -1,0 +1,22 @@
+%table#teetimes
+  %tr
+    %td= "Date: " + teetime.date.try(:strftime, "%B %d, at %I:%M%p")
+  %tr
+    %td= "Course: " + teetime.course
+  %tr
+    %td= link_to "Player 1: " + teetime.player1, usersteetime_path(teetime.user_id)
+  %tr
+    %td= "Player 2: " + teetime.player2.to_s
+  %tr
+    %td= "Player 3: " + teetime.player3.to_s
+  %tr
+    %td= "Player 4: " + teetime.player4.to_s
+- if current_user.id != teetime.user_id
+  %div= link_to "Join", edit_teetime_path(teetime), :class => 'button large'
+- if teetime.player2 and teetime.player3 and teetime.player4 != "OPEN"
+  %span= link_to "Accept", edit_teetime_path(teetime.user_id), :class => 'button tiny'
+  %span= link_to "Deny", teetime_path(teetime.user_id), :class => 'button tiny'
+
+
+
+

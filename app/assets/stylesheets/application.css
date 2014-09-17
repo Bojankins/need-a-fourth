@@ -42,6 +42,13 @@ select#teetime_date_1i, select#teetime_date_2i, select#teetime_date_3i, select#t
   width:15%
 }
 
+td{
+  width:75%;
+}
+
+a.button.tiny{
+  margin-top:10px
+}
 
  #signup{
   text-align: center;
