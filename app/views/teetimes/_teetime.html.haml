@@ -6,17 +6,21 @@
   %tr
     %td= link_to "Player 1: " + teetime.player1, usersteetime_path(teetime.user_id)
   %tr
-    %td= "Player 2: " + teetime.player2.to_s
+    - if current_user.id == teetime.user_id and teetime.player2 != "OPEN"
+      %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny') + "Player 2: " + teetime.player2.to_s 
+    - else  
+      %td= "Player 2: " + teetime.player2.to_s 
   %tr
-    %td= "Player 3: " + teetime.player3.to_s
+    - if current_user.id == teetime.user_id and teetime.player3 != "OPEN"
+      %td= "Player 3: " + teetime.player3.to_s 
+      %td= link_to "Remove", edit_teetime_path(teetime.teetime), :class => 'button tiny' 
+    - else   
+      %td= "Player 3: " + teetime.player3.to_s
   %tr
-    %td= "Player 4: " + teetime.player4.to_s
+    - if current_user.id == teetime.user_id and teetime.player4 != "OPEN"
+      %td= "Player 4: " + teetime.player4.to_s 
+      %td= link_to "Remove", edit_teetime_path(teetime.teetime), :class => 'button tiny' 
+    - else   
+      %td= "Player 4: " + teetime.player4.to_s
 - if current_user.id != teetime.user_id
   %div= link_to "Join", edit_teetime_path(teetime), :class => 'button large'
-- if teetime.player2 and teetime.player3 and teetime.player4 != "OPEN"
-  %span= link_to "Accept", edit_teetime_path(teetime.user_id), :class => 'button tiny'
-  %span= link_to "Deny", teetime_path(teetime.user_id), :class => 'button tiny'
-
-
-
-

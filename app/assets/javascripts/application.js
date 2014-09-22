@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require lodash
+//= require jquery.purr
+//= require best_in_place
 //= require moment
 //= require foundation
 //= require turbolinks

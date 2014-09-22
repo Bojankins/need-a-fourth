@@ -15,7 +15,40 @@
  *= require foundation 
  /*= require foundation */
 
+
  */
+
+ body{
+  background-color: #e3e3e3;
+  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+Cgk8cmVjdCB4PSctMTAlJyB5PSctMTAlJyB3aWR0aD0nMTIwJScgaGVpZ2h0PScxMjAlJyBmaWxsPScjZThlOGU4Jy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTUuNjIlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjOGM4YzhjJy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTAlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjZTNlM2UzJy8+Cjwvc3ZnPg==') !important;
+ }
+
+ #new_teetime{
+  background-color: rgba(25,25,25, .4);
+  padding: 1em;
+  border: white solid 3px;
+  border-radius: 1em;
+}
+
+div.input.datetime.optional.teetime_date{
+  text-align: center
+}
+
+ img{
+  margin-top: -1.5em;
+  min-width: 100%;
+  min-height: 100%;
+  border-bottom: solid black 2px;
+ }
+
+ #nav {
+  position: relative;
+  top: -42.4em;
+  background-color: rgba(225,248,255, .4) ;
+  width: 100%;
+  border-bottom: solid white 1px;
+}
+
 
 .header{
   text-align: center; 
@@ -27,11 +60,35 @@ table#teetimes{
 
 form#new_teetime{
   margin-left: 5em;
-  margin-top: 5em;
+  margin-top: 1em;
 }
 
+div.input.string.optional.teetime_course{
+  text-align: center;
+}
+
+input#teetime_course.string.optional{
+  margin: 1em;
+  margin-left: 35%;
+}
+
+label.datetime.optional{
+  text-align: center;
+  color: #008cba;
+  font-size: 40px;
+  text-shadow: 2px 2px rgba(244,244,244,.3);
+}
+
+label.string.optional, div.input.string.optional.teetime_course{
+  text-align: center;
+  color: #008cba;
+  font-size: 40px;
+  text-shadow: 2px 2px rgba(244,244,244,.3);
+}
+
+
 input.maketeetime{
-  margin-left: 40%
+  margin-left: auto;
 }
 
 input#teetime_course{
@@ -44,6 +101,7 @@ select#teetime_date_1i, select#teetime_date_2i, select#teetime_date_3i, select#t
 
 td{
   width:75%;
+  text-align: center !important;
 }
 
 a.button.tiny{

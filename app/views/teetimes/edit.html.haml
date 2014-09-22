@@ -1,14 +1,29 @@
-%h1= "Join " + @teetime.course + " with " + @user.name
+- if current_user.id != @teetime.user_id
+  %h1= "Join " + @teetime.course + " with " + @user.name
+  - if @teetime.player2 == "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player2
+      = f.submit "Join This Spot"
+  - elsif @teetime.player3 == "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player3
+      = f.submit "Join This Spot"
+  - elsif @teetime.player4 == "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player4
+      = f.submit "Join This Spot"
 
-- if @teetime.player2 == "OPEN"
-  = simple_form_for @teetime do |f|
-    = f.input :player2
-    = f.submit "Join This Spot"
-- if @teetime.player3 == "OPEN"
-  = simple_form_for @teetime do |f|
-    = f.input :player3
-    = f.submit "Join This Spot"
-- if @teetime.player4 == "OPEN"
-  = simple_form_for @teetime do |f|
-    = f.input :player4
-    = f.submit "Join This Spot"
+- if current_user.id = @teetime.user_id
+  %h1= "Make changes to you teetime at " + @teetime.course
+  - if @teetime.player2 != "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player2 
+      = f.submit "Submit Change"
+  - if @teetime.player3 != "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player3
+      = f.submit "Submit Change"
+  - if @teetime.player4 != "OPEN" or nil
+    = simple_form_for @teetime do |f|
+      = f.input :player4
+      = f.submit "Submit Change"

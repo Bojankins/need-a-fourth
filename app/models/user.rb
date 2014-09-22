@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :teetimes
+  has_one :profile
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -7,6 +8,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, :state, :city, presence: true
-
 
 end

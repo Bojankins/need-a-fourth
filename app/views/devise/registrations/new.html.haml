@@ -83,6 +83,5 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "off"
-      = f.hidden_field :latitude, :value => 36.1667
-      = f.hidden_field :longitude, :value => 86.7833
+      = f.hidden_field :description, :value => "Please tell us about yourself!"
   %div#signup.row= f.submit "Sign up", :class=>"button large "

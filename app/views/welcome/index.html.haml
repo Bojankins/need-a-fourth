@@ -1,24 +1,24 @@
-%p#row.navbar-text.pull-right
+%span#logo
+  = image_tag "golf.jpg"
+%div#nav
   - if user_signed_in?
-    %p
+    %p.nav
       logged in as
       = succeed "." do
         %strong
           \#{current_user.email}
-      = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
+      = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link nav'
       |
       \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
-      %div#logo
-        / = image_tag "golf.jpg"
   - else
-    = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
+    = link_to "Sign up", new_user_registration_path, :class => 'navbar-link nav'
     |
-    \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+    \#{link_to "Login", new_user_session_path, :class => 'navbar-link nav'}
 
   - if user_signed_in? && !current_user.teetimes.nil?
     =link_to "Add Your First Teetime", new_teetime_path, :class => 'button large' 
     =link_to "View All Available Teetimes", '/teetimes/all', :class => 'button large'
-  - else 
+  - else
     %br
-    =link_to "View Your Profile", usersteetime_path(@user), :class => 'button large' 
-    =link_to "View All Available Teetimes", teetimes_all_path, :class => 'button large'
+    / =link_to "View Your Profile", usersteetime_path(@user), :class => 'button large' 
+    =link_to "View All Available Teetimes", teetimes_all_path, :class => 'button large', :id => "teetimes"

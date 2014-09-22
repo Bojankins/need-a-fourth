@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
   get '/teetimes/all', to: 'teetimes#all'
   get '/teetimes/user/:user_id', to: 'teetimes#user_data', as: :usersteetime
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

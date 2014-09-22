@@ -1,5 +1,4 @@
 # PostgreSQL. Versions 8.2 and up are supported.
-#
 # Install the pg driver:
 #   gem install pg
 # On OS X with Homebrew:
@@ -75,8 +74,8 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+  production:
+    url: <%= ENV['DATABASE_URL'] %>
 #
 # production:
 #   <<: *default

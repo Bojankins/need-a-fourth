@@ -1,4 +1,3 @@
-
 class TeetimesController < ApplicationController
   before_action :authenticate_user!
   
@@ -9,8 +8,8 @@ class TeetimesController < ApplicationController
   end
 
   def all
-    @teetime = Teetime.all
-    @user = User.all
+    @teetime = Teetime.all.order(date des)
+    @user = current_user
   end
 
   def new

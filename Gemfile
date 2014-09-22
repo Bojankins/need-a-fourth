@@ -10,10 +10,11 @@ gem 'simplecov'
 gem 'devise'
 gem 'omniauth'
 gem 'jquery-ui-rails'
-gem 'omniauth-linkedin'
-gem 'gmaps4rails'
+gem 'omniauth-facebook'
+gem 'oauth2'
 gem 'sass'
 gem 'momentjs-rails'
+gem 'best_in_place', :git => 'https://github.com/aaronchi/best_in_place.git'
 gem 'lodash-rails'
 gem 'geocoder'
 gem 'haml'
@@ -48,3 +49,5 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
 end
+
+gem 'rails_12factor', group: :production
