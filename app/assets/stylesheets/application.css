@@ -20,6 +20,7 @@
 
  body{
   background-color: #e3e3e3;
+  z-index: -1;
   background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+Cgk8cmVjdCB4PSctMTAlJyB5PSctMTAlJyB3aWR0aD0nMTIwJScgaGVpZ2h0PScxMjAlJyBmaWxsPScjZThlOGU4Jy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTUuNjIlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjOGM4YzhjJy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTAlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjZTNlM2UzJy8+Cjwvc3ZnPg==') !important;
  }
 
