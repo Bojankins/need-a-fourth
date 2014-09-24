@@ -20,7 +20,6 @@
 
  body{
   background-color: #e3e3e3;
-  z-index: -1;
   background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+Cgk8cmVjdCB4PSctMTAlJyB5PSctMTAlJyB3aWR0aD0nMTIwJScgaGVpZ2h0PScxMjAlJyBmaWxsPScjZThlOGU4Jy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTUuNjIlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjOGM4YzhjJy8+Cgk8ZWxsaXBzZSBjeD0nNTAlJyBjeT0nNTAlJyByeD0nNDAlJyByeT0nNDAlJyBmaWxsPScjZTNlM2UzJy8+Cjwvc3ZnPg==') !important;
  }
 
@@ -40,7 +39,6 @@ div.row.teetime{
 }
 
  img{
-  z-index: -1;
   margin-top: -1.5em;
   max-width: 100%;
   max-width: 100%;
@@ -48,11 +46,19 @@ div.row.teetime{
  }
 
  #nav {
-  position: relative;
-  top: -188%;
-  background-color: rgba(225,248,255, .4) ;
+  background-color: rgba(225,248,255, .4);
   width: 100%;
   border-bottom: solid lightgreen 2px;
+  border-top: solid lightgreen 2px;
+  z-index: +1;
+}
+
+#wrapper{
+  position: relative;
+}
+
+#logo, #nav{
+  position: absolute;
 }
 
 
