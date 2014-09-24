@@ -8,5 +8,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, :state, :city, presence: true
+  after_create :create_profile
+
+
+  def create_profile
+    self.profile = Profile.new
+  end
 
 end

@@ -1,7 +1,6 @@
-%div.row
+%div.row.teetime
   %h1.header Set Up Your Teetime!
   %hr
-%div.row
   = simple_form_for @teetime do |f|
     = f.input :date, as: :datetime, :ampm => true
     = f.input :course

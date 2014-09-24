@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   resources :teetimes, only: [:new, :index, :create, :all, :destroy, :edit, :update]
   
+  resource :profile, only: [:new, :index, :create, :edit, :update]
   get '/teetimes/all', to: 'teetimes#all'
   get '/teetimes/user/:user_id', to: 'teetimes#user_data', as: :usersteetime
+
   
 
   # Example of regular route:

@@ -24,7 +24,7 @@
  }
 
  #new_teetime{
-  background-color: rgba(25,25,25, .4);
+  background-color: rgba(186,242,45, .4);
   padding: 1em;
   border: white solid 3px;
   border-radius: 1em;
@@ -34,19 +34,23 @@ div.input.datetime.optional.teetime_date{
   text-align: center
 }
 
+div.row.teetime{
+  background: ivory !important;
+}
+
  img{
   margin-top: -1.5em;
-  min-width: 100%;
-  min-height: 100%;
+  max-width: 100%;
+  max-width: 100%;
   border-bottom: solid black 2px;
  }
 
  #nav {
   position: relative;
-  top: -42.4em;
+  top: -188%;
   background-color: rgba(225,248,255, .4) ;
   width: 100%;
-  border-bottom: solid white 1px;
+  border-bottom: solid lightgreen 2px;
 }
 
 
@@ -61,6 +65,7 @@ table#teetimes{
 form#new_teetime{
   margin-left: 5em;
   margin-top: 1em;
+  margin-right: 5em;
 }
 
 div.input.string.optional.teetime_course{
@@ -74,14 +79,14 @@ input#teetime_course.string.optional{
 
 label.datetime.optional{
   text-align: center;
-  color: #008cba;
+  color: #01b016;
   font-size: 40px;
   text-shadow: 2px 2px rgba(244,244,244,.3);
 }
 
 label.string.optional, div.input.string.optional.teetime_course{
   text-align: center;
-  color: #008cba;
+  color: #01b016;
   font-size: 40px;
   text-shadow: 2px 2px rgba(244,244,244,.3);
 }
@@ -111,3 +116,10 @@ a.button.tiny{
  #signup{
   text-align: center;
  }
+
+.button{
+  background-color: #01b016 !important; 
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #4fd03b !important; }
