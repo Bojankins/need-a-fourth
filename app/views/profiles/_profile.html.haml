@@ -1,3 +1,3 @@
 %p= best_in_place profile, :description, :type => :textarea
 %p= best_in_place profile, :gear, :type => :textarea
-%p= profile.id
+= image_tag profile.avatar.url(:thumb)

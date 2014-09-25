@@ -2,6 +2,8 @@ class TeetimesController < ApplicationController
   before_action :authenticate_user!
   
   before_action :load_user
+
+  respond_to :html, :json
   
   def index
     @teetime = Teetime.where(user_id: current_user)
@@ -42,20 +44,24 @@ class TeetimesController < ApplicationController
   end
 
   def update
-    @teetime = Teetime.find(params[:id])
-    @user = User.find_by_id(@teetime.user_id)
+   @teetime = Teetime.find(params[:id])
+   @teetime.update_attributes(teetime_params)
+   respond_with @teetime
     @player = current_user
     if @teetime.update(teetime_params)
       UserMailer.player_confirmation(@user, @player).deliver
-      redirect_to teetimes_all_path
     else
       render :edit
     end
   end
 
-  # def show
-  #   redirect_to teetimes_all_path
-  # end
+  def destroy
+    teetime = Teetime.find(params[:id])
+    teetime.destroy!
+    flash.notice = "Your teetime has been deleted."
+    render :usersteetime
+  end
+
 
   protected
 

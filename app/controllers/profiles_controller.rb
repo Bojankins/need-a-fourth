@@ -7,17 +7,17 @@ class ProfilesController < ApplicationController
   respond_to :html, :json
 
   def update
-    @Profile = Profile.where(user_id: current_user)
-
-    respond_to do |format|
-      if @profile.update_attributes(params[:profile])
-        format.html { redirect_to(@profile, :notice => 'Profile was successfully updated.') }
-        format.json { respond_with_bip(@profile) }
-      else
-        format.html { render :action => "edit" }
-        format.json { respond_with_bip(@profile) }
-      end
+    @profile = Profile.find_by_id(current_user)
+    if @profile.update(profile_params)
+      redirect_to usersteetime_path(current_user), notice: "Your profile has been updated."
+    else
+      flash.now[:alert] = "Your changes could not be saved."
+      redirect_to '/teetimes/user/:user_id'
     end
+  end
+
+  def edit
+    @profile = Profile.find_by_id(current_user)
   end
 
   protected
@@ -26,5 +26,8 @@ class ProfilesController < ApplicationController
     @user == current_user
   end
 
-  
+  def profile_params
+    params.require(:profile).permit(:description, :avatar, :gear, :user_id)
+  end
+
 end

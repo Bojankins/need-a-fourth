@@ -3,36 +3,20 @@
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "foundation-rails"
+    %title= content_for?(:title) ? yield(:title) : "needafourth"
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "//maps.googleapis.com/maps/api/js?key=AIzaSyAU4JU7LGSa-GuQLLx_8ORqRNUJcJTsb84&sensor=true"
     = csrf_meta_tags
+
   %body
+  
     - if notice.present?
       .alert-box.success{ "data-alert" => "" }
         = notice
         %a.close{ href: "#" } &times;
     - if alert.present?
       .alert-box.alert{ "data-alert" => "" }
-        = alert
-    /     %a.close{ href: "#" } &times;
-    / - if notice
-    /   %p.alert.alert-success= notice
-    / - if alert
-    /   %p.alert.alert-danger= alert
-    %p.navbar-text.pull-right
-    / - if user_signed_in?
-    /   %p
-    /     logged in as
-    /     = succeed "." do
-    /       %strong= current_user.email
-    /     = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-    /     |
-    /     \#{link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'}
-    / - else
-    /   = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-    /   |
-    /   \#{link_to "Login", new_user_session_path, :class => 'navbar-link'}
+
     = yield
     = javascript_include_tag "application"

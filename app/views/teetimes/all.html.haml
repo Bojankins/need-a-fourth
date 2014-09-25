@@ -1,1 +1,7 @@
-%table#teetimes= render @teetime
+%div.navbar
+ =link_to "Home", root_path, :class => 'navbar'
+ =link_to "Add a Teetime", new_teetime_path, :class => 'navbar'
+ =link_to "View All Available Teetimes", '/teetimes/all', :class => 'navbar'
+ =link_to "View Your Profile", usersteetime_path(@user), :class => 'navbar'
+%div
+= render @teetime

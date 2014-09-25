@@ -1,0 +1,5 @@
+= simple_form_for @profile do |f|
+  = f.input :description
+  = f.input :gear
+  = f.input :avatar, :as => :file, :multipart => true
+  = f.submit "Update Your Profile"

@@ -1,26 +1,31 @@
-%table#teetimes
-  %tr
-    %td= "Date: " + teetime.date.try(:strftime, "%B %d, at %I:%M%p")
-  %tr
-    %td= "Course: " + teetime.course
-  %tr
-    %td= link_to "Player 1: " + teetime.player1, usersteetime_path(teetime.user_id)
-  %tr
-    - if current_user.id == teetime.user_id and teetime.player2 != "OPEN"
-      %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny') + "Player 2: " + teetime.player2.to_s 
-    - else  
-      %td= "Player 2: " + teetime.player2.to_s 
-  %tr
-    - if current_user.id == teetime.user_id and teetime.player3 != "OPEN"
-      %td= "Player 3: " + teetime.player3.to_s 
-      %td= link_to "Remove", edit_teetime_path(teetime.teetime), :class => 'button tiny' 
-    - else   
-      %td= "Player 3: " + teetime.player3.to_s
-  %tr
-    - if current_user.id == teetime.user_id and teetime.player4 != "OPEN"
-      %td= "Player 4: " + teetime.player4.to_s 
-      %td= link_to "Remove", edit_teetime_path(teetime.teetime), :class => 'button tiny' 
-    - else   
-      %td= "Player 4: " + teetime.player4.to_s
-- if current_user.id != teetime.user_id
-  %div= link_to "Join", edit_teetime_path(teetime), :class => 'button large'
+%div#tablecontainer
+  %table#teetimes
+    %tr
+      %td= "Date: " + teetime.date.try(:strftime, "%B %d, at %I:%M%p")
+    %tr
+      %td= "Course: " + teetime.course
+    %tr
+      %td= link_to "Player 1: " + teetime.player1, usersteetime_path(teetime.user_id)
+    %tr
+      - if current_user.id == teetime.user_id and teetime.player2 != "To Join Please Enter Your Name"
+        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 2: " + teetime.player2.to_s
+      - elsif teetime.player2 != current_user.name
+        %td= best_in_place teetime, :player2, :ok_button => "join", :ok_button_class => 'button tiny'
+      - else  
+        %td= "Player 2: " + teetime.player2
+    %tr
+      - if current_user.id == teetime.user_id and teetime.player3 != "To Join Please Enter Your Name"
+        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 3: " + teetime.player3.to_s 
+      - elsif teetime.player3 != current_user.name
+        %td= best_in_place teetime, :player3, :ok_button => "join", :ok_button_class => 'button tiny'
+      - else  
+        %td= "Player 3: " + teetime.player3
+    %tr
+      - if current_user.id == teetime.user_id and teetime.player4 != "To Join Please Enter Your Name"
+        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 4: " + teetime.player4.to_s
+      - elsif teetime.player4 != current_user.name
+        %td= best_in_place teetime, :player4, :value => current_user.name
+      - else  
+        %td= "Player 4: " + teetime.player4
+  - if current_user.id == teetime.user_id        
+    = button_to("I have Completed this Round", teetime, method: :delete, data: { confirm: "Are you sure?"}, class: "button expand")

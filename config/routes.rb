@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
   resource :user
 
-  resources :teetimes, only: [:new, :index, :create, :all, :destroy, :edit, :update]
+  resources :teetimes, only: [:new, :index, :create, :all, :destroy, :edit,  :update]
   
   resource :profile, only: [:new, :index, :create, :edit, :update]
   get '/teetimes/all', to: 'teetimes#all'

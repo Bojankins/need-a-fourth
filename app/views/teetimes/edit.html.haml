@@ -1,29 +1,20 @@
-- if current_user.id != @teetime.user_id
-  %h1= "Join " + @teetime.course + " with " + @user.name
-  - if @teetime.player2 == "OPEN" or nil
-    = simple_form_for @teetime do |f|
-      = f.input :player2
-      = f.submit "Join This Spot"
-  - elsif @teetime.player3 == "OPEN" or nil
-    = simple_form_for @teetime do |f|
-      = f.input :player3
-      = f.submit "Join This Spot"
-  - elsif @teetime.player4 == "OPEN" or nil
-    = simple_form_for @teetime do |f|
-      = f.input :player4
-      = f.submit "Join This Spot"
-
-- if current_user.id = @teetime.user_id
+%div.navbar
+ =link_to "Home", root_path, :class => 'navbar'
+ =link_to "Add a Teetime", new_teetime_path, :class => 'navbar'
+ =link_to "View All Available Teetimes", '/teetimes/all', :class => 'navbar'
+ =link_to "View Your Profile", usersteetime_path(@user), :class => 'navbar'
+%div.row
   %h1= "Make changes to you teetime at " + @teetime.course
-  - if @teetime.player2 != "OPEN" or nil
+  - if @teetime.player2 != "To Join Please Enter Your Name" or nil
     = simple_form_for @teetime do |f|
       = f.input :player2 
-      = f.submit "Submit Change"
-  - if @teetime.player3 != "OPEN" or nil
+      = f.submit "Submit Change", :class => 'button tiny'
+  - if @teetime.player3 != "To Join Please Enter Your Name" or nil
     = simple_form_for @teetime do |f|
       = f.input :player3
-      = f.submit "Submit Change"
-  - if @teetime.player4 != "OPEN" or nil
+      = f.submit "Submit Change", :class => 'button tiny'
+  - if @teetime.player4 != "To Join Please Enter Your Name" or nil
     = simple_form_for @teetime do |f|
       = f.input :player4
-      = f.submit "Submit Change"
+      = f.submit "Submit Change", :class => 'button tiny'
+  = button_to("I have Completed this Round", @teetime, method: :destroy, data: { confirm: "Are you sure?"}, class: "button expand row")

@@ -1,3 +1,8 @@
+%div.navbar
+  =link_to "Home", root_path, :class => 'navbar'
+  =link_to "Add a Teetime", new_teetime_path, :class => 'navbar'
+  =link_to "View All Available Teetimes", '/teetimes/all', :class => 'navbar'
+  =link_to "View Your Profile", usersteetime_path(@user), :class => 'navbar'
 %div.row.teetime
   %h1.header Set Up Your Teetime!
   %hr
@@ -5,8 +10,8 @@
     = f.input :date, as: :datetime, :ampm => true
     = f.input :course
     = f.hidden_field :player1, :value => current_user.name
-    = f.hidden_field :player2, :value => "OPEN"
-    = f.hidden_field :player3, :value => "OPEN"
-    = f.hidden_field :player4, :value => "OPEN"
+    = f.hidden_field :player2, :value => "To Join Please Enter Your Name"
+    = f.hidden_field :player3, :value => "To Join Please Enter Your Name"
+    = f.hidden_field :player4, :value => "To Join Please Enter Your Name"
     = f.hidden_field :user_id, :value => current_user.id
     = f.submit "Make Teetime!", class: 'button expand maketeetime'
