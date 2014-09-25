@@ -4,8 +4,6 @@ class ProfilesController < ApplicationController
   
   before_action :load_user
 
-  respond_to :html, :json
-
   def update
     @profile = Profile.find_by_id(current_user)
     if @profile.update(profile_params)
