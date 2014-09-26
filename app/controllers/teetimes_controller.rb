@@ -11,7 +11,7 @@ class TeetimesController < ApplicationController
   end
 
   def all
-    @teetime = Teetime.all
+    @teetime = Teetime.all.order(date: :asc)
     @user = current_user
   end
 
@@ -23,6 +23,7 @@ class TeetimesController < ApplicationController
   def user_data
     @teetime = Teetime.where(user_id: params[:user_id])
     @profile = Profile.where(user_id: params[:user_id])
+    @user = User.where(id: params[:user_id])
   end
 
   def create
@@ -31,7 +32,7 @@ class TeetimesController < ApplicationController
 
     if @teetime.save
       # UserMailer.registration_confirmation.deliver
-      redirect_to teetimes_path(@profile)
+      redirect_to teetimes_all_path(@profile)
     else
       flash.now[:alert] = "Teetime could not be created."
       render :new
@@ -59,7 +60,7 @@ class TeetimesController < ApplicationController
     teetime = Teetime.find(params[:id])
     teetime.destroy!
     flash.notice = "Your teetime has been deleted."
-    render :usersteetime
+    redirect_to '/teetimes/all'
   end
 
 

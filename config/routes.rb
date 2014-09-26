@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resource :profile, only: [:new, :index, :create, :edit, :update]
   get '/teetimes/all', to: 'teetimes#all'
   get '/teetimes/user/:user_id', to: 'teetimes#user_data', as: :usersteetime
-  
+  get '/teetimes/usersteetime'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
