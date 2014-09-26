@@ -53,6 +53,11 @@ h3.golf{
   color: white
 }
 
+div.row{
+  margin-right:50px !important;
+  margin-left:45px  !important
+}
+
 h3.connect{
   font-size: 70px;
   position: relative;
@@ -110,7 +115,7 @@ input.maketeetime{
 }
 
  div.all{
-   margin-left: 21em;
+   margin-left: 15em;
  }
 
 div#div.row{
@@ -159,7 +164,7 @@ div#tablecontainer{
 }
 
 a.button.large.profile{
-  margin-left: 27em;
+  margin-left: 18.5em;
 }
 
 table#teetimes{
@@ -171,8 +176,8 @@ table#teetimes{
 
 span.teetimes{
  position: relative;
- left: 35em;
- bottom: 43em;
+ left: 24em;
+ bottom: 47em;
 }
 
 span.profile {
