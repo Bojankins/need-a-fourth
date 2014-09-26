@@ -31,8 +31,35 @@ background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53
 }
 
 a.facebook2{
-  margin-left: 21em;
+  margin-left: 2em;
   margin-right: 2em;
+}
+
+h3.meet{
+  font-size: 90px;
+  position: relative;
+  top: 2em;
+  left: 4em;
+  z-index: +2;
+  color: white
+}
+
+h3.golf{
+  font-size: 70px;
+  position: relative;
+  top: 2.7em;
+  left: 5.7em;
+  z-index: +2;
+  color: white
+}
+
+h3.connect{
+  font-size: 70px;
+  position: relative;
+  top: 3em;
+  left: 7em;
+  z-index: +2;
+  color: white
 }
 
 div.navbar{
@@ -43,9 +70,23 @@ div.navbar{
   background-color: #01b016;   
 }
 
+h4.description{
+  width:50%;
+  padding: 2em;
+  background-color: white;
+  border: solid 3px lightgreen
+}
+
+h4.gear{
+  width:50%;
+  padding: 2em;
+  background-color: white;
+  border: solid 3px lightgreen
+}
+
 
 span.icons{
-  margin-left: 60%;
+  margin-left: 45%;
 }
 
 .facebook{
@@ -88,7 +129,7 @@ div.row.teetime{
   margin-top: -1.5em;
   max-width: 100%;
   max-width: 100%;
-  border-bottom: solid black 2px;
+  border: solid lightgreen 2px;
  }
 
  #nav {
@@ -130,8 +171,8 @@ table#teetimes{
 
 span.teetimes{
  position: relative;
- bottom: 16em;
  left: 35em;
+ bottom: 43em;
 }
 
 span.profile {
