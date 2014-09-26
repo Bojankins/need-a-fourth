@@ -1,4 +1,3 @@
 <%= @user.name %>,
 <br></br>
-<span><%= link_to @player.name, usersteetime_path(@player, :host => "https://needafourth.com", :only_path =>
-false) %>,</span>  has requested to join your Teetime at <%= @teetime.course %>, at <%= @teetime.date.try(:strftime, "%B %d, at %I:%M%p") %> .
+<span><%= link_to @player.name, usersteetime_path(@player, :host => "https://needafourth.com", :only_path => false) %>,</span>  has requested to join your Teetime at <%= @teetime.course %>, at <%= @teetime.date.try(:strftime, "%B %d, at %I:%M%p") %> .

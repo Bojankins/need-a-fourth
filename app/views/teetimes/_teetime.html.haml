@@ -4,27 +4,30 @@
       %td= "Date: " + teetime.date.try(:strftime, "%B %d, at %I:%M%p")
     %tr
       %td= "Course: " + teetime.course
+    - if current_user.id == teetime.user_id and teetime != "To Join Please Enter Your Name"
+      %tr
+        %td= "Click Name To Edit Player"
     %tr
       %td= link_to "Player 1: " + teetime.player1, usersteetime_path(teetime.user_id)
     %tr
       - if current_user.id == teetime.user_id and teetime.player2 != "To Join Please Enter Your Name"
-        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 2: " + teetime.player2.to_s
+        %td= best_in_place teetime, :player2, :ok_button => "change", :ok_button_class => 'button alert tiny'
       - elsif teetime.player2 != current_user.name
         %td= best_in_place teetime, :player2, :ok_button => "join", :ok_button_class => 'button tiny'
       - else  
         %td= "Player 2: " + teetime.player2
     %tr
       - if current_user.id == teetime.user_id and teetime.player3 != "To Join Please Enter Your Name"
-        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 3: " + teetime.player3.to_s 
+        %td= best_in_place teetime, :player3, :ok_button => "change", :ok_button_class => ' button alert tiny'
       - elsif teetime.player3 != current_user.name
         %td= best_in_place teetime, :player3, :ok_button => "join", :ok_button_class => 'button tiny'
       - else  
         %td= "Player 3: " + teetime.player3
     %tr
       - if current_user.id == teetime.user_id and teetime.player4 != "To Join Please Enter Your Name"
-        %td= (link_to "Remove", edit_teetime_path(teetime), :class => 'button tiny remove') + "Player 4: " + teetime.player4.to_s
+        %td= best_in_place teetime, :player4, :ok_button => 'change', :ok_button_class => 'button alert tiny'
       - elsif teetime.player4 != current_user.name
-        %td= best_in_place teetime, :player4, :value => current_user.name
+        %td= best_in_place teetime, :player4, :ok_button => 'join', :ok_button_class => 'button tiny'
       - else  
         %td= "Player 4: " + teetime.player4
   - if current_user.id == teetime.user_id        
