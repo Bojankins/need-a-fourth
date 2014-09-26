@@ -5,9 +5,10 @@ class UserMailer < ActionMailer::Base
   mail(:to => "matthew.olson808@gmail.com", :subject => "Registered")
   end
 
-  def player_confirmation(user, player)
+  def player_confirmation(user, player, teetime)
     @user = user
     @player = player
+    @teetime = teetime
     mail(:to => user.email, :subject => "Teetime Request")
   end
 

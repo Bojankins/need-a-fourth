@@ -47,10 +47,11 @@ class TeetimesController < ApplicationController
   def update
    @teetime = Teetime.find(params[:id])
    @teetime.update_attributes(teetime_params)
+   @user = User.find_by_id(@teetime.user_id)
    respond_with @teetime
     @player = current_user
     if @teetime.update(teetime_params)
-      UserMailer.player_confirmation(@user, @player).deliver
+      UserMailer.player_confirmation(@user, @player, @teetime).deliver
     else
       render :edit
     end

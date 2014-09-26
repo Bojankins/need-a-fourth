@@ -1,8 +1,8 @@
 %div.navbar
- =link_to "Home", root_path, :class => 'navbar'
- =link_to "Add a Teetime", new_teetime_path, :class => 'navbar'
- =link_to "View All Available Teetimes", '/teetimes/all', :class => 'navbar'
- =link_to "View Your Profile", usersteetime_path(@user), :class => 'navbar'
+  =link_to "Home", root_path, :class => 'navbar'
+  =link_to "Add a Teetime", new_teetime_path, :class => 'navbar'
+  =link_to "View All Available Teetimes", '/teetimes/all', :class => 'navbar'
+  =link_to "View Your Profile", usersteetime_path(@user), :class => 'navbar'
 %div.row
   %h1= "Make changes to you teetime at " + @teetime.course
   - if @teetime.player2 != "To Join Please Enter Your Name" or nil
@@ -17,4 +17,3 @@
     = simple_form_for @teetime do |f|
       = f.input :player4
       = f.submit "Submit Change", :class => 'button tiny'
-  = button_to("I have Completed this Round", @teetime, method: :destroy, data: { confirm: "Are you sure?"}, class: "button expand row")
